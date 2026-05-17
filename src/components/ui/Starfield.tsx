@@ -20,10 +20,17 @@ interface Star {
 function generateStars(count: number): Star[] {
   const stars: Star[] = [];
   for (let i = 0; i < count; i++) {
+    // Keep stars away from center text area (20-80% x, 15-85% y)
+    let x: number, y: number;
+    do {
+      x = Math.random() * 100;
+      y = Math.random() * 100;
+    } while (x > 15 && x < 85 && y > 10 && y < 90);
+
     stars.push({
       id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
+      x,
+      y,
       size: Math.random() * 20 + 8,
       delay: Math.random() * 8,
       duration: Math.random() * 4 + 3,

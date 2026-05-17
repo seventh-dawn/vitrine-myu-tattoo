@@ -6,10 +6,10 @@ import { SITE } from "@/lib/constants";
 
 const STYLES = [
   "Fine line",
+  "Ésotérique",
   "Blackwork",
   "Dotwork",
   "Kawaii",
-  "Ésotérique",
   "Floral",
 ];
 
@@ -41,7 +41,10 @@ export function Hero() {
 
         <AnimatedReveal delay={200}>
           <p className="mt-4 text-lg text-muted md:text-xl">
-            {SITE.artist} &mdash; Tatouages sur mesure
+            {SITE.artist}
+          </p>
+          <p className="mt-1 text-lg text-muted md:text-xl">
+            Tatouages sur mesure
           </p>
         </AnimatedReveal>
 
