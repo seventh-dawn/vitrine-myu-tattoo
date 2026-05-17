@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#1a0f24"/>
+  <circle cx="200" cy="220" r="80" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.5"/>
+  <circle cx="200" cy="220" r="40" fill="none" stroke="#d4a843" stroke-width="1" opacity="0.4"/>
+  <text x="200" y="380" text-anchor="middle" fill="#a78bba" font-family="serif" font-size="14">Tattoo</text>
+</svg>
