@@ -5,7 +5,7 @@
  * No canvas — pure DOM elements with CSS animations.
  */
 
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 
 interface Star {
   id: number;
@@ -41,7 +41,11 @@ function generateStars(count: number): Star[] {
 }
 
 export function Starfield() {
-  const stars = useMemo(() => generateStars(20), []);
+  const [stars, setStars] = useState<Star[]>([]);
+
+  useEffect(() => {
+    setStars(generateStars(20));
+  }, []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
