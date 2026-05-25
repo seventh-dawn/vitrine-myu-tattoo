@@ -14,20 +14,11 @@ export function AnimatedReveal({
   delay = 0,
 }: AnimatedRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const el = ref.current;
     if (!el) return;
-
-    // If already in viewport, reveal immediately
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setRevealed(true);
-      return;
-    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,15 +32,6 @@ export function AnimatedReveal({
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
-  // Before hydration, show content (no animation)
-  if (!mounted) {
-    return (
-      <div className={className}>
-        {children}
-      </div>
-    );
-  }
 
   return (
     <div
