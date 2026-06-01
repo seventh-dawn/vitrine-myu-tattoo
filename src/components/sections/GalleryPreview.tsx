@@ -1,15 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
-
-// TODO: Replace with Instagram feed data
-const PLACEHOLDER_IMAGES = Array.from({ length: 6 }, (_, i) => ({
-  id: String(i),
-  src: `/gallery/placeholder-${i + 1}.svg`,
-  alt: `Tattoo ${i + 1}`,
-}));
+import { getGalleryImages } from "@/lib/gallery";
 
 export function GalleryPreview() {
+  const images = getGalleryImages().slice(0, 6);
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <AnimatedReveal>
@@ -22,7 +17,7 @@ export function GalleryPreview() {
       </AnimatedReveal>
 
       <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
-        {PLACEHOLDER_IMAGES.map((img, i) => (
+        {images.map((img, i) => (
           <AnimatedReveal key={img.id} delay={i * 100}>
             <div className="group relative aspect-square overflow-hidden rounded-lg bg-surface">
               <Image

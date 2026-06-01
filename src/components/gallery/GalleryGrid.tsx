@@ -4,20 +4,19 @@ import Image from "next/image";
 import { useState } from "react";
 import { LightboxModal } from "./LightboxModal";
 
-// TODO: Replace with Instagram API data passed as props
-const PLACEHOLDER_IMAGES = Array.from({ length: 12 }, (_, i) => ({
-  id: String(i),
-  src: `/gallery/placeholder-${(i % 6) + 1}.svg`,
-  alt: `Tattoo ${i + 1}`,
-}));
+interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+}
 
-export function GalleryGrid() {
+export function GalleryGrid({ images }: { images: GalleryImage[] }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
     <>
       <div className="columns-2 gap-4 md:columns-3">
-        {PLACEHOLDER_IMAGES.map((img, i) => (
+        {images.map((img, i) => (
           <button
             key={img.id}
             onClick={() => setLightboxIndex(i)}
@@ -37,7 +36,7 @@ export function GalleryGrid() {
 
       {lightboxIndex !== null && (
         <LightboxModal
-          images={PLACEHOLDER_IMAGES}
+          images={images}
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}

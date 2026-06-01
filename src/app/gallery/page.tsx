@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { getGalleryImages } from "@/lib/gallery";
 
 export const metadata: Metadata = {
   title: "Galerie — A l'encre de lune",
@@ -8,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
+  const images = getGalleryImages();
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <AnimatedReveal>
@@ -20,7 +23,7 @@ export default function GalleryPage() {
       </AnimatedReveal>
 
       <div className="mt-12">
-        <GalleryGrid />
+        <GalleryGrid images={images} />
       </div>
     </section>
   );
