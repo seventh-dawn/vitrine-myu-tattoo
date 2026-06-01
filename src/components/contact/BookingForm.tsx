@@ -37,11 +37,9 @@ export function BookingForm() {
     const formData = new FormData(e.currentTarget);
 
     try {
-      // TODO: Replace with actual Formspree endpoint
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: formData,
-        headers: { Accept: "application/json" },
       });
 
       if (res.ok) {

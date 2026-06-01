@@ -6,7 +6,7 @@ import { getGalleryImages } from "@/lib/gallery";
 export function GalleryPreview() {
   const images = getGalleryImages().slice(0, 6);
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section className="mx-auto max-w-6xl px-6 pt-6 pb-20">
       <AnimatedReveal>
         <h2 className="font-display text-3xl font-bold text-center text-foreground md:text-4xl">
           Dernières créations
