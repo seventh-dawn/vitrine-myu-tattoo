@@ -15,7 +15,7 @@ const STYLES = [
 
 export function Hero() {
   return (
-    <section className="relative flex flex-col min-h-[75vh] items-center justify-center overflow-hidden px-6 pb-16">
+    <section className="relative flex flex-col min-h-[75vh] items-center justify-center overflow-hidden px-6 pb-4">
       {/* Starfield */}
       <div className="absolute inset-0 z-[1]">
         <Starfield />
@@ -71,19 +71,6 @@ export function Hero() {
         </AnimatedReveal>
       </div>
 
-      {/* Scroll indicator — below content, not absolute */}
-      <div className="relative z-10 mt-12 animate-bounce">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="mx-auto h-6 w-6 text-muted"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </div>
     </section>
   );
 }

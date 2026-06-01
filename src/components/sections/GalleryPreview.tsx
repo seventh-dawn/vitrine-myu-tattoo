@@ -1,36 +1,26 @@
-import Image from "next/image";
 import Link from "next/link";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { getGalleryImages } from "@/lib/gallery";
+import { AutoScrollGallery } from "./AutoScrollGallery";
 
 export function GalleryPreview() {
-  const images = getGalleryImages().slice(0, 6);
-  return (
-    <section className="mx-auto max-w-6xl px-6 pt-6 pb-20">
-      <AnimatedReveal>
-        <h2 className="font-display text-3xl font-bold text-center text-foreground md:text-4xl">
-          Dernières créations
-        </h2>
-        <p className="mt-2 text-center text-muted">
-          Découvrez mes tatouages les plus récents
-        </p>
-      </AnimatedReveal>
+  const images = getGalleryImages();
 
-      <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
-        {images.map((img, i) => (
-          <AnimatedReveal key={img.id} delay={i * 100}>
-            <div className="group relative aspect-square overflow-hidden rounded-lg bg-surface">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-primary-dark/0 transition-colors duration-300 group-hover:bg-primary-dark/30" />
-            </div>
-          </AnimatedReveal>
-        ))}
+  return (
+    <section className="pt-6 pb-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <AnimatedReveal>
+          <h2 className="font-display text-3xl font-bold text-center text-foreground md:text-4xl">
+            Dernières créations
+          </h2>
+          <p className="mt-2 text-center text-muted">
+            Découvrez mes tatouages les plus récents
+          </p>
+        </AnimatedReveal>
+      </div>
+
+      <div className="mt-6">
+        <AutoScrollGallery images={images} />
       </div>
 
       <AnimatedReveal delay={600}>

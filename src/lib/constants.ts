@@ -11,9 +11,10 @@ export const SITE = {
 export const NAV_LINKS = [
   { label: "Accueil", href: "/" },
   { label: "Galerie", href: "/gallery" },
+  { label: "Le salon", href: "/salon" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const SOCIALS = {
-  instagram: "https://www.instagram.com/myu.tattoo",
+  instagram: "https://www.instagram.com/myutattoo",
 } as const;
