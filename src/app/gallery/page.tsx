@@ -4,7 +4,7 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { getGalleryImages } from "@/lib/gallery";
 
 export const metadata: Metadata = {
-  title: "Galerie — A l'encre de lune",
+  title: "Galerie — À l'encre de lune",
   description: "Découvrez les tatouages réalisés par Myu Tattoo.",
 };
 

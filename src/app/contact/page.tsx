@@ -3,7 +3,7 @@ import { BookingForm } from "@/components/contact/BookingForm";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 
 export const metadata: Metadata = {
-  title: "Contact — A l'encre de lune",
+  title: "Contact — À l'encre de lune",
   description:
     "Réservez votre séance de tatouage avec Myu Tattoo. Décrivez votre projet.",
 };
