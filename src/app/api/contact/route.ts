@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { SOCIALS } from "@/lib/constants";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: `"${name}" <${process.env.SMTP_USER}>`,
       replyTo: email,
-      to: process.env.CONTACT_EMAIL,
+      to: process.env.CONTACT_EMAIL || SOCIALS.email,
       subject: `Demande de tatouage — ${name}`,
       html,
     });

@@ -17,4 +17,5 @@ export const NAV_LINKS = [
 
 export const SOCIALS = {
   instagram: "https://www.instagram.com/myutattoo",
+  email: "myutattoo91@gmail.com",
 } as const;

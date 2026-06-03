@@ -3,9 +3,10 @@ import { BookingForm } from "@/components/contact/BookingForm";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 
 export const metadata: Metadata = {
-  title: "Contact — À l'encre de lune",
+  title: "Contact — Réserver une séance",
   description:
-    "Réservez votre séance de tatouage avec Myu Tattoo. Décrivez votre projet.",
+    "Réservez votre séance de tatouage avec Myu Tattoo à Dieppe. Décrivez votre projet et recevez un devis personnalisé.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

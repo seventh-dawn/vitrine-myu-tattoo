@@ -3,8 +3,9 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Le salon — À l'encre de lune",
-  description: `Retrouvez le salon de tatouage À l'encre de lune au ${SITE.address}.`,
+  title: "Le salon",
+  description: `Retrouvez le salon de tatouage À l'encre de lune au ${SITE.address}. Dieppe, Normandie. Sur rendez-vous ou en walk-in pour les flashs.`,
+  alternates: { canonical: "/salon" },
 };
 
 export default function SalonPage() {
@@ -33,7 +34,10 @@ export default function SalonPage() {
               <h2 className="font-display text-xl font-bold text-foreground">
                 Horaires
               </h2>
-              <p className="mt-2 text-muted">Sur rendez-vous uniquement</p>
+              <p className="mt-2 text-muted">
+                Sur rendez-vous ou sans rendez-vous — passez au salon pour
+                découvrir les flashs disponibles et démarrer votre projet.
+              </p>
             </div>
 
             <div>

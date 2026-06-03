@@ -4,8 +4,10 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { getGalleryImages } from "@/lib/gallery";
 
 export const metadata: Metadata = {
-  title: "Galerie — À l'encre de lune",
-  description: "Découvrez les tatouages réalisés par Myu Tattoo.",
+  title: "Galerie",
+  description:
+    "Découvrez les tatouages réalisés par Myu Tattoo à Dieppe. Galerie de tatouages sur mesure, styles variés.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {
