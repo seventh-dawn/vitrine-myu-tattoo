@@ -7,13 +7,13 @@ export function ContactCTA() {
       <div className="mx-auto max-w-4xl text-center">
         <AnimatedReveal>
           <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-            Envie d&apos;un tatouage ?
+            Une envie d&apos;encre ?
           </h2>
         </AnimatedReveal>
 
         <AnimatedReveal delay={200}>
           <p className="mt-4 text-lg text-muted">
-            Parlez-moi de votre projet et réservons une séance ensemble.
+            Racontez-moi votre projet, et donnons-lui vie ensemble.
           </p>
         </AnimatedReveal>
 

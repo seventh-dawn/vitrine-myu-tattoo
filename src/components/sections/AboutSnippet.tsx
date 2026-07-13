@@ -13,17 +13,17 @@ export function AboutSnippet() {
 
         <AnimatedReveal delay={200}>
           <p className="mt-6 text-lg leading-relaxed text-muted">
-            Bienvenue chez {SITE.name}. Je suis {SITE.artist}, tatoueuse
-            passionnée par l&apos;univers ésotérique et kawaii. Chaque pièce est
-            unique, créée sur mesure pour raconter votre histoire sur votre peau.
+            Bienvenue à {SITE.name}. Je suis {SITE.artist}, tatoueuse amoureuse
+            des univers ésotérique et kawaii. Chaque pièce est unique, imaginée
+            à quatre mains avec vous pour raconter votre histoire à fleur de peau.
           </p>
         </AnimatedReveal>
 
         <AnimatedReveal delay={400}>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            Mon salon vous accueille dans une ambiance mystique et
-            bienveillante. N&apos;hésitez pas à me contacter pour discuter de
-            votre projet.
+            Mon salon vous accueille dans un cocon mystique et bienveillant,
+            quelque part entre la lune et les étoiles. Écrivez-moi, et rêvons
+            votre projet ensemble.
           </p>
         </AnimatedReveal>
       </div>
