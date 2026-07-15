@@ -3,7 +3,7 @@ export const SITE = {
   artist: "Myu Tattoo",
   description:
     "Salon de tatouage par Myu Tattoo — À l'encre de lune. Réservez votre séance.",
-  url: "https://alencredelune.fr",
+  url: "https://encre-de-lune.art",
   address: "21 Arcades de la Poissonnerie, Dieppe",
   mapQuery: "21+Arcades+de+la+Poissonnerie+Dieppe",
 } as const;

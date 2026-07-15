@@ -60,7 +60,7 @@ const PinIcon = (
 const LINKS: LinkItem[] = [
   {
     label: "Le site",
-    value: "alencredelune.fr",
+    value: "encre-de-lune.art",
     href: "/",
     icon: SiteIcon,
   },
