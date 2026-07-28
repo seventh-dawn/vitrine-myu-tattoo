@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { getGalleryImages } from "@/lib/gallery";
 import { AutoScrollGallery } from "./AutoScrollGallery";
 
-export function GalleryPreview() {
-  const images = getGalleryImages();
+async function GalleryPreviewContent() {
+  const images = await getGalleryImages();
+  return <AutoScrollGallery images={images} />;
+}
 
+export function GalleryPreview() {
   return (
     <section className="pt-6 pb-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -20,7 +24,9 @@ export function GalleryPreview() {
       </div>
 
       <div className="mt-6">
-        <AutoScrollGallery images={images} />
+        <Suspense fallback={null}>
+          <GalleryPreviewContent />
+        </Suspense>
       </div>
 
       <AnimatedReveal delay={600}>

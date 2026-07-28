@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 import { getGalleryImages } from "@/lib/gallery";
@@ -10,9 +11,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/gallery" },
 };
 
-export default function GalleryPage() {
-  const images = getGalleryImages();
+async function GalleryContent() {
+  const images = await getGalleryImages();
+  return <GalleryGrid images={images} />;
+}
 
+export default function GalleryPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <AnimatedReveal>
@@ -25,7 +29,9 @@ export default function GalleryPage() {
       </AnimatedReveal>
 
       <div className="mt-12">
-        <GalleryGrid images={images} />
+        <Suspense fallback={<p className="text-center text-muted">Chargement…</p>}>
+          <GalleryContent />
+        </Suspense>
       </div>
     </section>
   );
