@@ -1,6 +1,6 @@
 // App-shell cache so the app opens with no network at a convention.
 // Bump VERSION when shipping changes to force a fresh shell.
-const VERSION = 'sv-v3';
+const VERSION = 'sv-v4';
 const SHELL = [
   './index.html', './styles.css', './app.js', './auth.js', './config.js', './drive.js',
   './store.js', './preview.js', './icons.js', './manifest.webmanifest',

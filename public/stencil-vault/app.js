@@ -450,7 +450,10 @@ async function getLocalBlob(id) {
 }
 
 function shareOrSave(meta, blob) {
-  const file = new File([blob], meta.name, { type: blob.type || 'application/octet-stream' });
+  // Drive reports .procreate as a generic zip/binary type, which hides Procreate
+  // from the share sheet. With no type, iPadOS goes by the extension instead.
+  const type = /\.procreate$/i.test(meta.name) ? '' : blob.type || 'application/octet-stream';
+  const file = new File([blob], meta.name, { type });
   if (navigator.canShare?.({ files: [file] })) {
     return navigator.share({ files: [file] }).catch(e => {
       if (e.name !== 'AbortError') saveFile(file);
