@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/stencil-vault",
+        destination: "/stencil-vault/index.html",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

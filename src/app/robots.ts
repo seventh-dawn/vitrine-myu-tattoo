@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/login"],
+        disallow: ["/admin", "/login", "/stencil-vault"],
       },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
