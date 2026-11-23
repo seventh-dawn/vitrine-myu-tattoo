@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         destination: "/stencil-vault/index.html",
         permanent: false,
       },
+      {
+        // Lien du QR code concours — changer la destination ici pour un futur concours
+        source: "/concours",
+        destination: "https://www.instagram.com/p/DgDiuv0DDRd/",
+        permanent: false,
+      },
     ];
   },
 };
